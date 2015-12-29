@@ -1,0 +1,10 @@
+$visual-grid: true !global;
+
+@import "bourbon";
+@import "neat-helpers";
+
+$grid-columns: 4;
+$tablet: new-breakpoint(min-width 640px 6);
+$desktop: new-breakpoint(min-width 780px 12);
+
+@import "neat";
