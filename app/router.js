@@ -6,7 +6,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('scenes');
+  this.route('scenes', function() {
+    this.route('single', function() {
+      this.route('edit');
+    });
+  });
 });
 
 export default Router;

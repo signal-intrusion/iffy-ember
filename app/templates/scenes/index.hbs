@@ -1,0 +1,11 @@
+{{#with model as |scenes|}}
+
+{{#each scenes as |scene|}}
+  {{scene.heading}}
+  <br />
+  {{scene.text}}
+{{/each}}
+
+{{add-scene-tool onSave=(action 'saveNewScene')}}
+
+{{/with}}

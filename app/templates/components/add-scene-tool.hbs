@@ -1,0 +1,15 @@
+{{#if addingScene}}
+
+  <button class="add-scene-button__button" type="button" {{action "toggleTool"}}>Cancel New Scene</button>
+
+  {{input id="add-scene-tool__heading" type="text" value=newSceneText class="add-scene-tool__input" placeholder="give your scene a heading" autofocus="autofocus"}}
+
+  {{textarea id="add-scene-tool__text" class="add-scene-tool__textarea" value=newSceneHeading class="add-scene-tool__input" rows="4" placeholder="Write some text for your scene..."}}
+
+  <button class="add-scene-button__button" type="submit" {{action "saveScene"}}>Save New Scene</button>
+
+{{else}}
+
+  <button class="add-scene-button__button" type="button" {{action "toggleTool"}}>Add Scene</button>
+
+{{/if}}
