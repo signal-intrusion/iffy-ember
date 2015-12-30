@@ -11,6 +11,10 @@ export default Ember.Controller.extend({
       });
 
       return scene.save();
+    },
+
+    deleteScene(scene) {
+      return scene.destroyRecord();
     }
   }
 });

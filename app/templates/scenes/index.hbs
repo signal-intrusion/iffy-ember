@@ -1,11 +1,13 @@
 {{#with model as |scenes|}}
 
-{{#each scenes as |scene|}}
-  {{scene.heading}}
-  <br />
-  {{scene.text}}
-{{/each}}
+  {{#each scenes as |scene|}}
 
-{{add-scene-tool onSave=(action 'saveNewScene')}}
+    {{#scene-card scene=scene}}
+      {{delete-scene-button scene=scene onDelete=(action 'deleteScene')}}
+    {{/scene-card}}
+
+  {{/each}}
+
+  {{add-scene-tool onSave=(action 'saveNewScene')}}
 
 {{/with}}
