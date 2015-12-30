@@ -1,4 +1,7 @@
-<h2 class="scene-card__heading">{{scene.heading}}</h2>
+{{#link-to 'scenes.single.edit' scene}}
+  <h2 class="scene-card__heading">{{scene.heading}}</h2>
+{{/link-to}}
+
 <p class="scene-card__text">{{scene.text}}</p>
 
 {{yield}}

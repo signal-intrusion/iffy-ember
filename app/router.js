@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('scenes', function() {
-    this.route('single', function() {
+    this.route('single', { path: ':id' }, function() {
       this.route('edit');
     });
   });
