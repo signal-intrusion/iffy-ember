@@ -1,4 +1,4 @@
-{{#with model as |scene|}}
+{{#with model.scene as |scene|}}
 
   {{link-to 'all scenes' 'scenes'}}
 
@@ -16,5 +16,10 @@
 
   <button class="edit-scene__button edit-scene__button--save" type="submit" {{action 'deleteScene'}}>Delete Scene</button>
 
+  {{#each scene.outboundChoices as |choice|}}
+    {{choice-display choice=choice isAdmin=true}}
+  {{/each}}
+
+  {{add-choice-tool scenes=model.allScenes currentScene=model.scene onSave=(action 'createChoice')}}
 
 {{/with}}

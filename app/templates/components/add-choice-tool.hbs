@@ -1,0 +1,15 @@
+<form class="add-choice-tool__form">
+
+  Connect to another scene:
+  <br />
+
+  {{input type="text" placeholder="describe the choice your readr faces" value=choiceDescription}}
+
+  {{!-- TODO: make accessible --}}
+  {{#power-select options=sceneOptions selected=targetScene onchange=(action 'setTargetScene') as |scene|}}
+    {{ scene.heading }}
+  {{/power-select}}
+
+  <button type="submit" {{action 'saveChoice'}}>save choice</button>
+
+</form>

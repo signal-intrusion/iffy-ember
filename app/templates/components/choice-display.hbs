@@ -1,0 +1,7 @@
+<p class="choice-display__text">{{choice.description}}</p>
+
+{{#if isAdmin}}
+  {{#link-to 'scenes.single.edit' destination.id class="choice-display__scene-link"}}
+    Edit Scene: {{ destination.heading }}
+  {{/link-to}}
+{{/if}}

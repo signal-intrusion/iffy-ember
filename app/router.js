@@ -11,6 +11,10 @@ Router.map(function() {
       this.route('edit');
     });
   });
+
+  this.route('stories', function() {
+    this.route('read');
+  });
 });
 
 export default Router;
