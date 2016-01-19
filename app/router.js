@@ -13,7 +13,9 @@ Router.map(function() {
   });
 
   this.route('stories', function() {
-    this.route('read');
+    this.route('read', function() {
+      this.route('thread', { path: ':threadId' });
+    });
   });
 });
 

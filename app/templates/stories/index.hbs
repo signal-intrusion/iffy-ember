@@ -1,0 +1,8 @@
+{{#with model as |stories|}}
+
+  {{#each stories as |story|}}
+    {{story.title}}
+  {{/each}}
+
+{{/with}}
+{{outlet}}

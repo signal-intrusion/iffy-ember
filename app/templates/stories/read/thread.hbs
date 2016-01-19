@@ -1,0 +1,18 @@
+{{#with model as |thread|}}
+
+  {{#with thread.story.firstScene as |firstScene|}}
+    <h2 class="thread__scene__heading">{{firstScene.heading}}</h2>
+    <p class="thread__scene__text">{{firstScene.text}}</p>
+
+    {{#each firstScene.outboundChoices as |choice|}}
+      {{view-choice choice=choice onSelect=(action 'addSceneToThread')}}
+    {{/each}}
+  {{/with}}
+
+  {{#each thread.threadScenes as |threadScene|}}
+    hey
+    <h2 class="thread__scene__heading">{{threadScene.scene.heading}}</h2>
+    <p class="thread__scene__text">{{threadScene.scene.text}}</p>
+  {{/each}}
+
+{{/with}}
