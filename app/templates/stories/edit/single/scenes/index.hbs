@@ -1,0 +1,13 @@
+{{#with model as |story|}}
+
+  {{#each story.scenes as |scene|}}
+
+    {{#scene-card scene=scene}}
+      {{delete-scene-button scene=scene onDelete=(action 'deleteScene')}}
+    {{/scene-card}}
+
+  {{/each}}
+
+  {{add-scene-tool onSave=(action 'saveNewScene')}}
+
+{{/with}}

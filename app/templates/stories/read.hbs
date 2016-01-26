@@ -2,13 +2,11 @@
   Stories I'm reading:
   <br />
 
-  {{#each model as |thread|}}
+  {{#each model.threads as |thread|}}
     {{link-to thread.id 'stories.read.thread' thread.id}}
     <br />
   {{/each}}
 
-  <button class="button--start-thread" {{action 'startNewThread'}} type="submit">Start a new story</button>
 </div>
 
 {{outlet}}
-

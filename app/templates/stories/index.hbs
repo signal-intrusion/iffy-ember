@@ -1,8 +1,13 @@
 {{#with model as |stories|}}
 
   {{#each stories as |story|}}
-    {{story.title}}
+    <div class="">
+      {{story.title}}
+      <button class="button--start-thread" {{action 'startNewThread' story}} type="submit">Read This Story</button>
+    </div>
   {{/each}}
 
+  <button class="" {{action 'startNewStory'}}>Create a new Story</button>
+
+
 {{/with}}
-{{outlet}}

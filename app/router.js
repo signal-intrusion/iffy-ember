@@ -16,6 +16,14 @@ Router.map(function() {
     this.route('read', function() {
       this.route('thread', { path: ':threadId' });
     });
+
+    this.route('edit', function() {
+      this.route('single', { path: ':id' }, function() {
+        this.route('scenes', function() {
+          this.route('single', { path: ':id' });
+        });
+      });
+    });
   });
 });
 

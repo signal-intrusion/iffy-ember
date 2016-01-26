@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  hasThreadScenes: Ember.computed('model.threadScenes' ,function() {
+    return !this.get('model.threadScenes.length');
+  }),
+
   actions: {
     addSceneToThread({ choice }) {
       let thread = this.get('model');
@@ -8,12 +12,12 @@ export default Ember.Controller.extend({
 
       let newThreadScene = this.store.createRecord('thread-scene', {
         dateAdded: new Date(),
-        scene: destinationScene,
         thread
       });
 
-      destinationScene.get('threadScenes').addObject(newThreadScene);
+      // destinationScene.get('threadScenes').addObject(newThreadScene);
       thread.get('threadScenes').addObject(newThreadScene);
+      newThreadScene.set('scene', destinationScene);
 
       return newThreadScene.save().then( () => {
         // return destinationScene.save().then( () => {

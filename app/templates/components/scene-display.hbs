@@ -1,0 +1,8 @@
+<h2 class="thread__scene__heading">{{scene.heading}}</h2>
+<p class="thread__scene__text">{{scene.text}}</p>
+
+{{#if showChoices }}
+  {{#each scene.outboundChoices as |choice|}}
+    {{view-choice choice=choice onSelect=onSelectChoice}}
+  {{/each}}
+{{/if}}

@@ -12,8 +12,6 @@ export default Model.extend({
   text: attr('string'),
 
   // relationships
-  threadScenes: hasMany('thread-scene'),
-
   outboundChoices: hasMany('choice', {
     inverse: 'belongsToScene'
   }),
